@@ -1,72 +1,56 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        isAAN
-      </h1>
-      <h2 class="subtitle">
-        is x AAN?
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="main">
+    <div class="header">
+      <h2>Is{{name}} AAN?</h2>
+    </div>
+    <div class="container">
+      <GaugeCanvas/>
+    </div>
+    <div class="footer">
+      <a href="https://steefmin.xyz">steefmin</a>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import GaugeCanvas from '~/components/Gauge.vue'
 
 export default {
   components: {
-    Logo
-  }
+    GaugeCanvas
+  },
+    data() {
+      let re = /[\/|-]/g;
+      return {name: this.$route.fullPath.replace(re, ' ')}
+    }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+div {
   display: flex;
-  justify-content: center;
+}
+
+.main {
+  flex-direction: column;
+  /*justify-content: center;*/
   align-items: center;
-  text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.container {
+  justify-content: center;
+  /*min-height: vh;*/
+  /*align-items: center;*/
+  /*text-align: center;*/
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.header {
+  height: 10vh;
 }
-
-.links {
-  padding-top: 15px;
+.footer {
+  align-items: flex-end;
+  height: 10vh;
+}
+a {
+  font-size: 10pt;
 }
 </style>

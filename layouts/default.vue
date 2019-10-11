@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="aaa">
     <nuxt />
   </div>
 </template>
@@ -15,6 +15,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.aaa {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 *,

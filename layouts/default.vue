@@ -1,5 +1,5 @@
 <template>
-  <div class="aaa">
+  <div class="base">
     <nuxt />
   </div>
 </template>
@@ -17,10 +17,11 @@ html {
   box-sizing: border-box;
 }
 
-.aaa {
+.base {
   display: flex;
-  flex-direction: row;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 }
 
 *,

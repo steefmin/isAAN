@@ -52,6 +52,7 @@ div {
 }
 .header {
   height: 10vh;
+  padding: 20px;
 }
 .footer {
   align-items: flex-end;

@@ -24,6 +24,8 @@
     justify-content: center;
     position: relative;
     left: -32px;
+    min-width: 224px;
+    min-height: 190px;
     width: 30vw;
     height: 1vw;
   }

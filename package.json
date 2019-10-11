@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js --fix .",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

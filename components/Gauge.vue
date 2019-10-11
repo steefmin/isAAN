@@ -16,8 +16,12 @@
         data() {
             return {
                 GaugeEl: null,
-                value: 0,
+                value: 5,
                 displaySpinner: true,
+                ON_VALUE: 800,
+                OFF_VALUE: 5,
+                VARIANCE: 30,
+                VARIANCE_INTERVAL: 500,
             };
         },
         methods: {
@@ -25,7 +29,7 @@
               return {
                   angle: 0.10, // The span of the gauge arc
                   lineWidth: 0.44, // The line thickness
-                  radiusScale: 0.5, // Relative radius
+                  radiusScale: 0.6, // Relative radius
                   pointer: {
                       length: 0.6, // // Relative to gauge radius
                       strokeWidth: 0.035, // The thickness
@@ -61,26 +65,27 @@
               let target = document.getElementById('gauge');
               this.GaugeEl = new Gauge(target).setOptions(options);
               this.GaugeEl.maxValue = 1000;
-              this.GaugeEl.setMinValue(0);
+              this.GaugeEl.minValue = 0;
               this.GaugeEl.set(this.value);
-              setInterval(() => {this.varyDial()}, 500);
+              setInterval(() => { this.varyDial() }, this.VARIANCE_INTERVAL);
 
           },
           setDial() {
-              this.value = this.value === 0 ? 800 : 0;
+              this.value = this.value === this.OFF_VALUE ? this.ON_VALUE : this.OFF_VALUE;
               this.GaugeEl.set(this.value);
           },
           varyDial() {
-              this.GaugeEl.set(this.value + this.randInt(30));
+              this.GaugeEl.set(this.value + this.randInt(this.VARIANCE));
           },
-          randInt(val) {
-              return Math.floor(Math.random() * 2 * val - val);
+          randInt(variance) {
+              return Math.floor(Math.random() * 2 * variance - variance);
           },
           tryToMount() {
+              // Wait before external JS is loaded
               if (typeof Gauge === "function") {
                   this.drawDial(this.getOpts());
               } else{
-                  setTimeout(() => {this.tryToMount()}, 5000);
+                  setTimeout(() => { this.tryToMount() }, 5000);
               }
           }
         },
@@ -97,6 +102,8 @@
  }
 
  canvas {
+   min-width: 224px;
+   min-height: 190px;
    width: 30vw;
    height: 12vw;
  }

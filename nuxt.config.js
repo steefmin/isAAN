@@ -60,5 +60,8 @@ export default {
         component: resolve(__dirname, 'pages/index.vue')
       })
     }
+  },
+  generate: {
+    fallback: 'pages/index.vue'
   }
 }

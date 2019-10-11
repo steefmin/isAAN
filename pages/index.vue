@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="header">
-      <h2>Is{{name}} AAN?</h2>
+      <h2>Is {{ name }} AAN?</h2>
     </div>
     <div class="container">
       <GaugeCanvas/>
@@ -20,8 +20,15 @@ export default {
     GaugeCanvas
   },
     data() {
-      let re = /[\/|-]/g;
-      return {name: this.$route.fullPath.replace(re, ' ')}
+      return {
+          name: this.getName()
+      }
+    },
+    methods: {
+      getName() {
+          let re = /[\/|-]/g
+          return this.$route.fullPath.replace('/', '').replace(re, ' ') || 'het feestje'
+      }
     }
 }
 </script>

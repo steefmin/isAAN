@@ -62,6 +62,6 @@ export default {
     }
   },
   generate: {
-    fallback: 'pages/index.vue'
+    fallback: 'index.html'
   }
 }

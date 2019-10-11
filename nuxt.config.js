@@ -49,19 +49,4 @@ export default {
     extend (config, ctx) {
     }
   },
-  /*
-  ** Custom router
-  */
-  router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '/*',
-        component: resolve(__dirname, 'pages/index.vue')
-      })
-    }
-  },
-  generate: {
-    fallback: 'index.html'
-  }
 }

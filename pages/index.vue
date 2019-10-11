@@ -26,7 +26,7 @@ export default {
     },
     methods: {
       getName() {
-          let re = /[\/|-]/g
+          let re = /(\/|-|#)/g
           return this.$route.fullPath.replace('/', '').replace(re, ' ') || 'het feestje'
       }
     }

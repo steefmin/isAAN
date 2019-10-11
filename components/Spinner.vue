@@ -19,7 +19,6 @@
 
 <style scoped>
   .lds-roller {
-    /*display: flex;*/
     display: flex;
     justify-content: center;
     position: relative;

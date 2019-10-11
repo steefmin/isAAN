@@ -7,7 +7,7 @@
       <GaugeCanvas/>
     </div>
     <div class="footer">
-      <a href="https://steefmin.xyz">steefmin</a>
+      <a href="https://steefmin.xyz">by: MINdustries</a>
     </div>
   </div>
 </template>
@@ -40,25 +40,24 @@ div {
 
 .main {
   flex-direction: column;
-  /*justify-content: center;*/
   align-items: center;
 }
 
 .container {
   justify-content: center;
-  /*min-height: vh;*/
-  /*align-items: center;*/
-  /*text-align: center;*/
 }
 .header {
   height: 10vh;
-  padding: 20px;
+  padding: 50px;
 }
 .footer {
   align-items: flex-end;
+  justify-content: right;
   height: 10vh;
 }
 a {
   font-size: 10pt;
+  text-decoration: none;
+  color: black;
 }
 </style>

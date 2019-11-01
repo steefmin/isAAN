@@ -5,6 +5,7 @@
       :value="value"
       :minValue="minValue"
       :maxValue="maxValue"
+      :gaugeValueClass="'hidden'"
       :options="options"
       :top="false"
       class="gauge"
@@ -93,5 +94,9 @@
    min-height: 190px;
    width: 30vw;
    height: 12vw;
+ }
+
+ .gauge >>> .hidden {
+   display: none;
  }
 </style>

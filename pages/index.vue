@@ -4,7 +4,7 @@
       <h2>Is {{ name }} AAN?</h2>
     </div>
     <div class="container">
-      <GaugeCanvas/>
+      <Gauge/>
     </div>
     <div class="footer">
       <a href="https://steefmin.xyz">by: MINdustries</a>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import GaugeCanvas from '~/components/Gauge.vue'
+import Gauge from '~/components/Gauge.vue'
 
 export default {
   components: {
-    GaugeCanvas
+    Gauge
   },
     data() {
       return {

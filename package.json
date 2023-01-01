@@ -13,7 +13,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.10.1",
     "vgauge": "^1.2.6"
   },
   "devDependencies": {
